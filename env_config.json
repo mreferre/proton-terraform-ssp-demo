@@ -1,5 +1,5 @@
 {
-  "tf-test": {
+  "ssp-dev-001": {
       "role": "arn:aws:iam::130531697802:role/GitHubActions-SSP-askulkarni2-Role-1TFILSTZYYW78",
       "region": "us-east-2"
   }
