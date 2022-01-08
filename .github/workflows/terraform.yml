@@ -95,11 +95,12 @@ jobs:
       continue-on-error: true
     
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@9aaa1daa91b40ce855e24cd45fb39b2ca18aeaf1
+      uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: ${{ inputs.aws_region }}
         role-to-assume: ${{ inputs.role_arn }}
         role-session-name: TF-Github-Actions
+        role-duration-seconds: 3600
       continue-on-error: true
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
