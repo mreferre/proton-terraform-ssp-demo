@@ -67,9 +67,9 @@ provider "helm" {
 }
 
 locals {
-  tenant      = var.environment.inputs.tenant
-  environment = var.environment.inputs.environment
-  zone        = var.environment.inputs.zone
+  tenant             = var.environment.inputs.tenant
+  environment        = var.environment.inputs.environment
+  zone               = var.environment.inputs.zone
   kubernetes_version = var.environment.inputs.kubernetes_version
 
   vpc_cidr       = "10.0.0.0/16"
@@ -157,7 +157,7 @@ module "aws-eks-accelerator-for-terraform" {
   platform_teams = {
     admin-team-1 = {
       users = [
-          "arn:aws:sts::130531697802:assumed-role/Admin/kuapoorv-Isengard",
+        "arn:aws:sts::130531697802:assumed-role/Admin/kuapoorv-Isengard",
       ]
     }
   }
@@ -171,14 +171,17 @@ module "kubernetes-addons" {
   eks_oidc_provider_arn = module.aws-eks-accelerator-for-terraform.eks_oidc_provider_arn
 
   # EKS Managed Add-ons
-  enable_amazon_eks_vpc_cni    = true
-  enable_amazon_eks_coredns    = true
-  enable_amazon_eks_kube_proxy = true
+  enable_amazon_eks_vpc_cni            = true
+  enable_amazon_eks_coredns            = true
+  enable_amazon_eks_kube_proxy         = true
 
   #K8s Add-ons
   enable_aws_load_balancer_controller = var.environment.inputs.aws_load_balancer_controller
   enable_metrics_server               = var.environment.inputs.metrics_server
   enable_cluster_autoscaler           = var.environment.inputs.cluster_autoscaler
+  enable_argocd                       = var.environment.inputs.argocd
+  enable_aws_for_fluentbit            = var.environment.inputs.aws_for_fluentbit
+  enable_cert_manager                 = var.environment.inputs.cert_manager
 
   depends_on = [module.aws-eks-accelerator-for-terraform.managed_node_groups]
 }
@@ -186,4 +189,4 @@ module "kubernetes-addons" {
 output "configure_kubectl" {
   description = "Configure kubectl: make sure you're logged in with the correct AWS profile and run the following command to update your kubeconfig"
   value       = module.aws-eks-accelerator-for-terraform.configure_kubectl
-}  
+}
