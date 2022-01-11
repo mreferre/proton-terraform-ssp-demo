@@ -176,9 +176,9 @@ module "kubernetes-addons" {
   enable_amazon_eks_kube_proxy = true
 
   #K8s Add-ons
-  enable_aws_load_balancer_controller = true
-  enable_metrics_server               = true
-  enable_cluster_autoscaler           = true
+  enable_aws_load_balancer_controller = var.environment.inputs.aws_load_balancer_controller
+  enable_metrics_server               = var.environment.inputs.metrics_server
+  enable_cluster_autoscaler           = var.environment.inputs.cluster_autoscaler
 
   depends_on = [module.aws-eks-accelerator-for-terraform.managed_node_groups]
 }
