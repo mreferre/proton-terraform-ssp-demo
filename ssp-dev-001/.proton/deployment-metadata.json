@@ -1,9 +1,9 @@
 {
-  "deploymentId" : "8e6fcd96-1940-4849-a765-368e185514ad",
+  "deploymentId" : "bc47967e-27c1-4b99-baa2-e1148b409f0b",
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:us-east-2:130531697802:environment/ssp-dev-001",
     "templateArn" : "arn:aws:proton:us-east-2:130531697802:environment-template/ssp-blueprint",
     "templateMajorVersion" : "1",
-    "templateMinorVersion" : "8"
+    "templateMinorVersion" : "9"
   }
 }
