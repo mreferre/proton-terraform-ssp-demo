@@ -180,6 +180,7 @@ module "kubernetes-addons" {
   enable_argocd                       = var.environment.inputs.argocd
   enable_aws_for_fluentbit            = var.environment.inputs.aws_for_fluentbit
   enable_cert_manager                 = var.environment.inputs.cert_manager
+  enable_vpa                          = var.environment.inputs.vpa
 
   depends_on = [module.aws-eks-accelerator-for-terraform.managed_node_groups]
 }
