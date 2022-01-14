@@ -1,6 +1,6 @@
 {
   "ssp-dev-001": {
-      "role": "arn:aws:iam::130531697802:role/GitHubActions-SSP-askulkarni2-Role-1TFILSTZYYW78",
+      "role": "arn:aws:iam::693935722839:role/ExampleGithubRole",
       "region": "us-east-2"
   }
 }
