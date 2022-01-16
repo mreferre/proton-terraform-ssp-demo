@@ -1,6 +1,6 @@
 {
   "ssp-dev-001": {
       "role": "arn:aws:iam::693935722839:role/ExampleGithubRole",
-      "region": "us-east-2"
+      "region": "us-west-2"
   }
 }
